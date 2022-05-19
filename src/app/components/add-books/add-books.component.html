@@ -1,9 +1,9 @@
 <div class="container mt-3">
-  <h1>Add Data</h1>
+  <h1 class="text-center">Add Data</h1>
   <div class="row justify-content center mt-3">
-    <div class="col-md-4">
+    <div class="col-md-12">
       <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-        <div class="form-group mt-2">
+        <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" formControlName="name" required>
         </div>
@@ -15,8 +15,8 @@
           <label for="description">Description</label>
           <input type="text" class="form-control" formControlName="description" required>
         </div>
-        <div class="form-group mt-3">
-            <button class="btn btn-primary btn-block col-md-12" type="submit">Add Book</button>
+        <div class="form-group mt-4">
+            <button class="btn btn-dark btn-block col-md-12" type="submit">Add Book</button>
         </div>
       </form>
     </div>
