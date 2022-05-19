@@ -14,9 +14,7 @@ export class Book {
   providedIn: 'root'
 })
 export class CrudService {
-  deleteBook(id: any) {
-    throw new Error('Method not implemented.');
-  }
+
 
   // Node/Express API
   REST_API: string = 'http://localhost:8000/api'
@@ -28,7 +26,7 @@ export class CrudService {
 
   //Add
   AddBook(data: Book): Observable<any> {
-    let API_URL = `${this.REST_API}/add-books`;
+    let API_URL = `${this.REST_API}/add-book`;
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
@@ -58,6 +56,15 @@ export class CrudService {
       .pipe(
         catchError(this.handleError)
       )
+  }
+
+  // Delete
+  deleteBook(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/delete-book/${id}`;
+    return this.httpClient.delete(API_URL, {headers: this.httpHeaders})
+    .pipe(
+      catchError(this.handleError)
+    )
   }
 
 
